@@ -52,6 +52,8 @@ body {
   position:absolute;
   top:20px;
   left:15px;
+  border:1px solid #0cf;
+  border-radius:50%;
   animation:rond 3s infinite;
   -webkit-animation:rond 3s infinite;
 }
