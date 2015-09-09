@@ -74,7 +74,7 @@ box-sizing: border-box;
     无宽度 —— 浮动（float） 元素
 
 
-它们在页面上的表现均不占据空间（脱离普通流，感觉像浮在页面上层一样，移动它们不影响其他元素的定位）。这就涉及到另外两个核心概念 position 和 float。
+它们在页面上的表现均不占据空间（设置为position:relative后，仍然会占据空间。脱离普通流，感觉像浮在页面上层一样，移动它们不影响其他元素的定位）。这就涉及到另外两个核心概念 position 和 float。
 ### position
 position 这个属性决定了元素将如何定位。它的值大概有以下五种：
 ![image](https://github.com/sunshine9/Css3-Study/blob/master/images/filehelper_1441792465729_11.jpg)
@@ -94,16 +94,16 @@ float 顾名思义，就是把元素浮动，它的取值一共有四个：left 
 浅如：<br>
 经验分享：CSS浮动(float,clear)通俗讲解(http://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html)篇幅不长，通俗易懂，可以看完这篇文章再回过头来看本文。<br>
 深如：<br>
-CSS float浮动的深入研究、详解及拓展(一)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)<br>
+![CSS float浮动的深入研究、详解及拓展(一)](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)<br>
 
-CSS float浮动的深入研究、详解及拓展(二)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%BA%8C/)<br>
+![CSS float浮动的深入研究、详解及拓展(二)](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%BA%8C/)<br>
 从本质上讲解了 float 的原理。<br>
 我就不班门弄斧写原理了，只说说 float 的几个要点就行了：<br>
     只有左右浮动，没有上下浮动。<br>
     元素设置 float 之后，它会脱离普通流（和 position: absolute; 一样），不再占据原来那层的空间，还会覆盖下一层的元素。<br>
     浮动不会对该元素的上一个兄弟元素有任何影响。<br>
     浮动之后，该元素的下一个兄弟元素会紧贴到该元素之前没有设置 float<br> 的元素之后（很好理解，因为该元素脱离普通流了，或者说不在这一层了，所以它的下一个元素当然要补上它的位置）。<br>
-    如果该元素的下一个兄弟元素中有内联元素（通常是文字），则会围绕该元素显示，形成类似「文字围绕图片」的效果。（可参考CSS float浮动的深入研究、详解及拓展(一)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)中的讲解）。这个我还是实践了一下的：具体代码参考:http://jsfiddle.net/GeekPlux/9yAH8/light/<br>
+    如果该元素的下一个兄弟元素中有内联元素（通常是文字），则会围绕该元素显示，形成类似「文字围绕图片」的效果。（可参考![CSS float浮动的深入研究、详解及拓展(一)](http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)中的讲解）。这个我还是实践了一下的：![具体代码参考](http://jsfiddle.net/GeekPlux/9yAH8/light/)<br>
     下一个兄弟元素如果也设置了同一方向的 float，则会紧随该元素之后显示。
     该元素将变为块级元素，相当于给该元素设置了 display: block;（和position: absolute; 一样）。<br>
-这里有个东西，就是广为人知的——清除浮动。具体的方法五花八门，可以看这篇：那些年我们一起清除过的浮动(http://www.iyunlu.com/view/css-xhtml/55.html)，我就不多说了。
+这里有个东西，就是广为人知的——清除浮动。具体的方法五花八门，可以看这篇：![那些年我们一起清除过的浮动](http://www.iyunlu.com/view/css-xhtml/55.html)，我就不多说了。
