@@ -32,7 +32,7 @@ inline-block 在我看来就是让元素对外呈内联元素，可以和其他�
 HTML 代码是顺序执行的，一份无任何 CSS 样式的 HTML 代码最终呈现出的页面是根据元素出现的顺序和类型排列的。块级元素就从上到下排列，遇到内联元素则从左到右排列。这种无样式的情况下，元素的分布叫普通流，元素出现的位置应该叫正常位置（这是我瞎起的），同时所有元素会在页面上占据一个空间，空间大小由其盒模型决定。
 ### 盒模型
 页面上显示的每个元素（包括内联元素）都可以看作一个盒子，即盒模型( box model )。请看 Chrome DevTools 里的截图：
-！[images](https://github.com/sunshine9/Css3-Study/blob/master/images/640.jpg)
+![images](https://github.com/sunshine9/Css3-Study/blob/master/images/640.jpg)
 可以显而易见的看出盒模型由 4 部分组成。从内到外分别是：
 ```css
 content->padding->border->margin
@@ -66,3 +66,15 @@ margin: 20px;
 box-sizing: border-box;
 }
 ```
+这里还有两种特殊情况：
+
+
+    无宽度 —— 绝对定位（position: absolute;） 元素
+
+    无宽度 —— 浮动（float） 元素
+
+
+它们在页面上的表现均不占据空间（脱离普通流，感觉像浮在页面上层一样，移动它们不影响其他元素的定位）。这就涉及到另外两个核心概念 position 和 float。
+### position
+position 这个属性决定了元素将如何定位。它的值大概有以下五种：
+
