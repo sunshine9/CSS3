@@ -84,54 +84,26 @@ position 设置为 relative 的时候，元素依然在普通流中，位置是�
 
 
 而当一个元素的 position 值为 absolute 或 fixed 的时候，会发生三件事：<br>
-
-
-    1、把该元素往 Z 轴方向移了一层，元素脱离了普通流，所以不再占据原来那层的空间，还会覆盖下层的元素。<br>
-
-    2、该元素将变为块级元素，相当于给该元素设置了 display: block;（给一个内联元素，如 <span> ，设置 absolute 之后发现它可以设置宽高了）。<br>
-
-    3、如果该元素是块级元素，元素的宽度由原来的 width: 100%（占据一行），变为了 auto。<br>
-
-
+1、把该元素往 Z 轴方向移了一层，元素脱离了普通流，所以不再占据原来那层的空间，还会覆盖下层的元素。<br>
+2、该元素将变为块级元素，相当于给该元素设置了 display: block;（给一个内联元素，如 <span> ，设置 absolute 之后发现它可以设置宽高了）。<br>
+3、如果该元素是块级元素，元素的宽度由原来的 width: 100%（占据一行），变为了 auto。<br>
 由此观之，当 position 设置为 absolute 或 fixed，就没必要设置 display 为 block 了。而且如果你不想覆盖下层的元素，可以设置 z-index 值 达到效果。<br>
 ### float
 float 顾名思义，就是把元素浮动，它的取值一共有四个：left right none inherit，光看名字就懂了，无需多言。
-
-
 最初的 float 只是用来实现文字环绕图片的效果，仅此而已。而现在 float 的应用已不止这个，前辈们也是写了无数博文来深入浅出的讲解它。
-
-
 浅如：
-
 经验分享：CSS浮动(float,clear)通俗讲解(http://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html)篇幅不长，通俗易懂，可以看完这篇文章再回过头来看本文。
-
-
 深如：
-
 CSS float浮动的深入研究、详解及拓展(一)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)
 
 CSS float浮动的深入研究、详解及拓展(二)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%BA%8C/)
-
-
 从本质上讲解了 float 的原理。
-
-
 我就不班门弄斧写原理了，只说说 float 的几个要点就行了：
-
-
     只有左右浮动，没有上下浮动。
-
     元素设置 float 之后，它会脱离普通流（和 position: absolute; 一样），不再占据原来那层的空间，还会覆盖下一层的元素。
-
     浮动不会对该元素的上一个兄弟元素有任何影响。
-
     浮动之后，该元素的下一个兄弟元素会紧贴到该元素之前没有设置 float 的元素之后（很好理解，因为该元素脱离普通流了，或者说不在这一层了，所以它的下一个元素当然要补上它的位置）。
-
     如果该元素的下一个兄弟元素中有内联元素（通常是文字），则会围绕该元素显示，形成类似「文字围绕图片」的效果。（可参考CSS float浮动的深入研究、详解及拓展(一)(http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/)中的讲解）。这个我还是实践了一下的：具体代码参考:http://jsfiddle.net/GeekPlux/9yAH8/light/
-
     下一个兄弟元素如果也设置了同一方向的 float，则会紧随该元素之后显示。
-
     该元素将变为块级元素，相当于给该元素设置了 display: block;（和position: absolute; 一样）。
-
-
-这里还有个东西，就是广为人知的——清除浮动。具体的方法五花八门，可以看这篇：那些年我们一起清除过的浮动(http://www.iyunlu.com/view/css-xhtml/55.html)，我就不多说了。
+这里有个东西，就是广为人知的——清除浮动。具体的方法五花八门，可以看这篇：那些年我们一起清除过的浮动(http://www.iyunlu.com/view/css-xhtml/55.html)，我就不多说了。
