@@ -1,0 +1,54 @@
+﻿body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, form,input {
+    margin:0;
+    padding:0;
+}
+body {
+    font:12px/1.5 '宋体';
+    color:#222;
+}
+img {
+    border:0;
+}
+a {
+    text-decoration:none;
+}
+ul, ol {
+    list-style:none;
+}
+.back {
+    width:960px;
+    height:40px;
+    padding-right:20px;
+    margin:10px auto;
+    padding-top:10px;
+    background:url(../images/bg.jpg) repeat-x;
+}
+
+#search input[type=text] {
+    background:url(../images/ss.png) no-repeat 10px 8px #fcfcfc;
+    border:1px solid #333;
+    font:bold 12px Arial,Helvetica,Sans-serif;
+    color:#6a6f75;
+    width:70px;
+    padding:6px 15px 6px 35px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+
+    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    -webkit-transition:all 0.7s ease 0s;
+    -moz-box-transition:all 0.7s ease 0s;
+    transition:all 0.7s ease 0s;
+    float:right;
+}
+#search input[type="text"]:focus {
+    background:url(../images/ss.png) no-repeat 10px 8px #fcfcfc;
+    width:200px;
+    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    outline:0;
+}
+
