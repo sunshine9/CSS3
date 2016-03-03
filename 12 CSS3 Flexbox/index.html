@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Css3 Flexbox</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	.container{
+        display: flex;
+        flex-flow: row;
+	}
+	.left{
+		flex:1;
+	}
+	.right{
+		flex:2;
+	}
+	.main{
+		width:60%;
+	}
+</style>
+</head>
+<body>
+    <!-- 伸缩容器 -->
+    <div class="container">
+    	<nav class="nav left">...</nav>
+    	<section class="main">xxx</section>
+    	<nav class="nav right">xxx</nav>
+    </div>
+</body>
+</html>
