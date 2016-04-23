@@ -47,3 +47,36 @@ input[type="checkbox"][disabled]:checked + label:before {
   background-position: -96px 0;
 }
 ```
+
+--
+
+#### 样式化 input[type=file]
+```html
+<a href="javascript:;" class="file">
+     <input type="file" name="" id="">
+</a>
+```
+```css
+.file {
+    position: relative;
+    display: inline-block;
+    background: url(../images/upload-file.png) no-repeat;
+    height:88px;
+    width:88px;
+    background-size: 88px auto;
+    overflow: hidden;
+    text-decoration: none;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+```
+
+
+
+
