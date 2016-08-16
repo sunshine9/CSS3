@@ -13,3 +13,14 @@
             border-image-slice: 1;
         }
 ```
+
+--
+
+#### @media 查询
+```css
+@media screen and (max-width: 300px) {
+    body {
+        background-color:lightblue;
+    }
+}
+```
