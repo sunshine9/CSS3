@@ -152,3 +152,19 @@ input[type="checkbox"][disabled]:checked + label:before {
     $('body').on('click', '.radio-container', radioBeautify);
 })();
 ```
+
+#### 样式化 select
+```css
+.loan-apply select {
+    border: 0;
+    height: 45px;
+    line-height: 45px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../images/public/select-bg.png") no-repeat scroll right center transparent;
+    background-size: auto 7px;
+}
+
+```
