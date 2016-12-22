@@ -77,6 +77,78 @@ input[type="checkbox"][disabled]:checked + label:before {
 }
 ```
 
+#### 样式化 radio
+```html
+<div class="radio-list">
+                <div class="radio-label-container">
+                    <div class="radio-container radio-on">
+                        <input id="woman" name="sex" value="1" checked="checked" type="radio">
+                    </div>
+                    <label for="woman">女士</label>
+                </div>
+                <div class="radio-label-container">
+                    <div class="radio-container">
+                        <input id="man" name="sex" value="1" type="radio">
+                    </div>
+                    <label for="man">先生</label>
+                </div>
+            </div>
+```
 
+```css
+/*radio 美化*/
+.radio-label-container {
+    float: left;
+    cursor: pointer;
+    margin-right: 15px;
+}
 
+.radio-label-container label {
+    display: inline-block;
+    margin-left: 2px;
+    line-height: 14px;
+}
 
+.radio-container {
+    width: 13px;
+    height: 13px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    background: url(../images/public/radio.png) no-repeat;
+    margin-right: 2px;
+    background-size: 13px 13px;
+}
+
+.radio-on {
+    background: url(../images/public/radio-on.png) no-repeat;
+    background-size: 13px 13px;
+}
+
+.radio-container input[type="radio"] {
+    opacity: 0;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+
+/*radio 样式美化*/
+```
+
+```javascript
+// radio 样式美化 -------------------------------------
+(function () {
+    var radioBeautify = function () {
+        var radioName = $(this).children('input[type="radio"]').attr('name');
+        $('input[type="radio"]').each(function (i, obj) {
+            if ($(this).attr('name') == radioName) {
+                $(this).removeAttr('checked')
+                $(this).parents('.radio-container').removeClass('radio-on');
+            }
+        });
+        $(this).addClass("radio-on");
+        $(this).children('input[type="radio"]').attr("checked", "checked");
+    }
+    $('body').on('click', '.radio-container', radioBeautify);
+})();
+```
